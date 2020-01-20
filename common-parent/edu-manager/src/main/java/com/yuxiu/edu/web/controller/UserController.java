@@ -27,8 +27,7 @@ public class UserController extends BaseController<User> {
     public String manage(){
         System.out.println("进入了manage");
         System.out.println("值为:"+MANAGE_PATH);
-        //return MANAGE_PATH;
-        return null;
+        return MANAGE_PATH;//如果返回空，会默认寻找上一次访问的路径
     }
     @RequestMapping(INFO)
     public String info(){
