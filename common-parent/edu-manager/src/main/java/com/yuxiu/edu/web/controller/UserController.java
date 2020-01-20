@@ -25,7 +25,13 @@ public class UserController {
     }
     @RequestMapping("manage")
     public String manage(){
-
-        return "User/UserManage";
+        System.out.println("进入了");
+        return "user/manage";
     }
+    @RequestMapping("info")
+    public String info(){
+
+        return "user/info";
+    }
+
 }

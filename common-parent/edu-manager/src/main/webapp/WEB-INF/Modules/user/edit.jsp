@@ -2,19 +2,15 @@
 <html>
 <head>
 <title></title>
-	link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/Styles/bridging.css"/>
+	<link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/Styles/bridging.css"/>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/assets/Scripts/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/assets/Scripts/common.js"></script>
-<script type="text/javascript">
-function userUpdate(){
-	/*$("#userForm").attr("action","");
-	$("#userForm").submit();*/
-}
-$(document).ready(function(){
-
-	 
-});
-</script>
+	<script type="text/javascript">
+	function userSave(){
+		$("#userForm").attr("action","");
+		$("#userForm").submit();
+	}
+	</script>
 </head>
 <body>
 	<form method="post" id="userForm" action="">
@@ -22,14 +18,14 @@ $(document).ready(function(){
 			<div class="form">
 				<div class="specificPage_header fix">
 					<h4 class="specificPage_title l">
-						<span id="MainContent_lbTitle">修改</span>
+						<span id="MainContent_lbTitle">编辑</span>
 					</h4>
 					<span class="closePage r" onclick="Common.closePage();">关闭</span>
 				</div>
 				<div id="MainContent_divTitleTab" class="activeEdite_tab_list"
 					style="margin-bottom: 3px;">
 					<p>
-						<span class="tab_list_current" data-tab="tab_1" onclick="Common.switchTab(this);">修改用户信息</span>
+						<span class="tab_list_current" data-tab="tab_1" onclick="Common.switchTab(this);">添加用户</span>
 					</p>
 				</div>
 
@@ -40,15 +36,13 @@ $(document).ready(function(){
 								<td class="input_text tar">用户名：</td>
 								<td>
 									<p>
-										<input name="userId" type="hidden" value=""/>
-										<input name="username" type="text" value="" id="username"
-										style="width: 150px;" readonly="readonly"/> 
+										<input name="username" type="text" value="" id="username"  style="width: 150px;" /> 
 									</p>
 								</td>
 								<td class="input_text tar">密码：</td>
 								<td>
 									<p>
-										<input name="password" type="text" value="" id="password"  style="width: 150px;" readonly="readonly"/>
+										<input name="password" type="text" value="" id="password"  style="width: 150px;" />
 									</p>
 								</td>
 								<td class="input_text tar">手机号码：</td>
@@ -62,7 +56,7 @@ $(document).ready(function(){
 								<td class="input_text tar">QQ：</td>
 								<td>
 									<p>
-										<input name="qq" type="text" value="" id="qq" style="width: 150px;" />
+										<input name="qq" type="text" value="" id="qq" style="width: 150px;" /> 
 									</p>
 								</td>
 								<td class="input_text tar">email：</td>
@@ -100,12 +94,36 @@ $(document).ready(function(){
 									</p>
 								</td>
 							</tr>
+
+							<tr><td colspan="6" style="margin-top: 116px;"><h5>添加设备</h5></td></tr>
+							<tr>
+								<td class="input_text tar">设备类型：</td>
+								<td>
+									<p>
+									  <select name="deviceType" id="deviceType" >
+										<option value="">请选设备类型</option>
+									</select>
+									</p>
+								</td>
+								<td class="input_text tar">设备ID：</td>
+								<td>
+									<p>
+										<input name="deviceId" type="text" value="" id="deviceId" style="width: 150px;" />
+									</p>
+								</td>
+								<td class="input_text tar">设备机型：</td>
+								<td>
+									<p>
+										<input name="deviceDetail" type="text" value="" id="deviceDetail" style="width: 150px;" />
+									</p>
+								</td>
+							</tr>
 						</table>
 					</div>
 				</div>
 				 <div class="form_btn form_btn_static">
                     <ul>
-                        <li><input type="button" value="保存" onclick="userUpdate();"/></li>
+                        <li><input type="button" value="保存" onclick="userSave();"/></li>
                         <li><input type="button" value="关闭" onclick="Common.closePage();" /></li>
                     </ul>
                 </div>
