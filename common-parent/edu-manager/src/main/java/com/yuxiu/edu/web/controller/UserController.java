@@ -18,14 +18,12 @@ public class UserController {
     }
     @RequestMapping("find")
     public String find(Integer id){
-        System.out.println("访问控制器");
         User user=userService.findById(id);
         System.out.println(user);
         return null;
     }
     @RequestMapping("manage")
     public String manage(){
-        System.out.println("进入了");
         return "user/manage";
     }
     @RequestMapping("info")
