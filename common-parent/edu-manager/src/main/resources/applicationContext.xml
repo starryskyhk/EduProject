@@ -24,15 +24,16 @@
         <property name="maxPoolSize" value="30"/>
         <property name="minPoolSize" value="2"/>
     </bean>
+
     <!-- 配置sessionFactory -->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 指定配置文件位置 -->
-<!--        <property name="configLocation" value="classpath:mybatis.xml"/>-->
+        <!--<property name="configLocation" value="classpath:mybatis.xml"/>-->
         <!--配置别名-->
-        <property name="typeAliasesPackage" value="com.yuxiu.edu.model"/>
+        <property name="typeAliasesPackage" value="com.yuxiu.edu.model"></property>
 
-        <!--配置加载映射文件-->
+        <!--配置加载映射文件 UserMapper.xml-->
         <property name="mapperLocations" value="classpath:com/yuxiu/edu/mapper/*Mapper.xml"/>
     </bean>
 

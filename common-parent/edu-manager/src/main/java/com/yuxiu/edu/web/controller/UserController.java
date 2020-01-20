@@ -2,13 +2,14 @@ package com.yuxiu.edu.web.controller;
 
 import com.yuxiu.edu.model.User;
 import com.yuxiu.edu.service.IUserService;
+import com.yuxiu.edu.web.controller.base.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("user")
-public class UserController {
+public class UserController extends BaseController<User> {
     @Autowired
     private IUserService userService;
     @RequestMapping("login")
@@ -22,14 +23,21 @@ public class UserController {
         System.out.println(user);
         return null;
     }
-    @RequestMapping("manage")
+    @RequestMapping(MANAGE)
     public String manage(){
-        return "user/manage";
+        System.out.println("进入了manage");
+        System.out.println("值为:"+MANAGE_PATH);
+        //return MANAGE_PATH;
+        return null;
     }
-    @RequestMapping("info")
+    @RequestMapping(INFO)
     public String info(){
+        return INFO_PATH;
+    }
+    @RequestMapping(EDIT)
+    public String edit(){
 
-        return "user/info";
+        return EDIT_PATH;
     }
 
 }
