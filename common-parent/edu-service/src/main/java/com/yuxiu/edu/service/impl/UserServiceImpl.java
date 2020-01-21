@@ -16,7 +16,8 @@ public class UserServiceImpl extends BaseServiceImpl<User>  implements IUserServ
 
     @Override
     public User findById(Integer id) {
-        return userMapper.findById(id);
+        System.out.println("输出为:"+userMapper.selectByPrimaryKey(id));
+        return userMapper.selectByPrimaryKey(id);
     }
 
     @Override

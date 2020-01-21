@@ -14,7 +14,8 @@ public class UserController extends BaseController<User> {
     private IUserService userService;
     @RequestMapping("login")
     public String login(){
-        System.out.println("访问控制器");
+        User byId = userService.findById(1);
+        System.out.println("查询到的========="+byId);
         return "Default";
     }
     @RequestMapping("find")
